@@ -1,50 +1,47 @@
 import random
 import sys
 from dvclive import Live
-
-with Live(save_dvc_exp=True) as live:
-    epochs = int(sys.argv[1])
-    live.log_param("epochs", epochs)
-    for epoch in range(epochs):
-        live.log_metric("train/accuracy", epoch + random.random())
-        live.log_metric("train/loss", epochs - epoch - random.random())
-        live.log_metric("val/accuracy",epoch + random.random() )
-        live.log_metric("val/loss", epochs - epoch - random.random())
-        live.next_step()
-
-
-
-
-
-#import necessary libraries
 import tensorflow as tf
 
-#load training data and split into train and test sets
-mnist = tf.keras.datasets.mnist
-
-(x_train,y_train), (x_test,y_test) = mnist.load_data()
-x_train, x_test = x_train / 255.0, x_test / 255.0
+# train.py
 
 
-#define model
-model = tf.keras.models.Sequential([
-                               tf.keras.layers.Flatten(input_shape=(28,28)),
-                                   tf.keras.layers.Dense(128,activation='relu'),
-                                   tf.keras.layers.Dropout(0.2),
-                                   tf.keras.layers.Dense(10)
-])
+with Live(save_dvc_exp=True) as live:
+    NUM_EPOCHS = 5
 
-#define loss function variable
-loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+    live.log_param("epochs", NUM_EPOCHS)
 
-#define optimizer,loss function and evaluation metric
-model.compile(optimizer='adam',
-             loss=loss_fn,
-             metrics=['accuracy'])
+    for epoch in range(NUM_EPOCHS):
+        mnist = tf.keras.datasets.mnist
 
-#train the model
-model.fit(x_train,y_train,epochs=5)
+        (x_train,y_train), (x_test,y_test) = mnist.load_data()
+        x_train, x_test = x_train / 255.0, x_test / 255.0
 
 
-#test model accuracy on test set
-model.evaluate(x_test,y_test,verbose=2)
+        #define model
+        model = tf.keras.models.Sequential([
+                                    tf.keras.layers.Flatten(input_shape=(28,28)),
+                                        tf.keras.layers.Dense(128,activation='relu'),
+                                        tf.keras.layers.Dropout(0.2),
+                                        tf.keras.layers.Dense(10)
+        ])
+
+        #define loss function variable
+        loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+
+        #define optimizer,loss function and evaluation metric
+        model.compile(optimizer='adam',
+                    loss=loss_fn,
+                    metrics=['accuracy'])
+
+        #train the model
+        model.fit(x_train,y_train,epochs=5)
+
+        metrics = model.evaluate(x_test,y_test,verbose=2)
+        live.log_metric("accuracy", metrics[1])
+        # for metric_name, value in metrics.items():
+        #     live.log_metric(metric_name, value)
+
+        live.next_step()
+
+    live.log_artifact("./model", type="model", name="test1")
