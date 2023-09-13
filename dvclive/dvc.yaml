@@ -7,5 +7,5 @@ plots:
     x: step
 artifacts:
   test1:
-    path: ..
+    path: ../modeltest.ipynb
     type: model
