@@ -35,10 +35,10 @@ with Live(save_dvc_exp=True) as live:
                     metrics=['accuracy'])
 
         #train the model
-        model.fit(x_train,y_train,epochs=5)
+        model.fit(x_train,y_train,epochs=1)
 
         metrics = model.evaluate(x_test,y_test,verbose=2)
-        live.log_metric("accuracy", metrics[1])
+        live.log_metric("accuracy", metrics[0])
         # for metric_name, value in metrics.items():
         #     live.log_metric(metric_name, value)
 
