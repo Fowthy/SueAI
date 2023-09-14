@@ -7,7 +7,7 @@ import tensorflow as tf
 
 
 with Live(save_dvc_exp=True) as live:
-    NUM_EPOCHS = 1
+    NUM_EPOCHS = 5
 
     live.log_param("epochs", NUM_EPOCHS)
 
@@ -35,13 +35,12 @@ with Live(save_dvc_exp=True) as live:
                     metrics=['accuracy'])
 
         #train the model
-        model.fit(x_train,y_train,epochs=1)
+        model.fit(x_train,y_train,epochs=5)
 
         metrics = model.evaluate(x_test,y_test,verbose=2)
-        live.log_metric("accuracy", metrics[0])
+        live.log_metric("accuracy", metrics[1])
         # for metric_name, value in metrics.items():
         #     live.log_metric(metric_name, value)
-        # 
 
         live.next_step()
 
