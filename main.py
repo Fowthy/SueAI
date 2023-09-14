@@ -41,6 +41,7 @@ with Live(save_dvc_exp=True) as live:
         live.log_metric("accuracy", metrics[0])
         # for metric_name, value in metrics.items():
         #     live.log_metric(metric_name, value)
+        # 
 
         live.next_step()
 
