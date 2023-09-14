@@ -7,7 +7,7 @@ import tensorflow as tf
 
 
 with Live(save_dvc_exp=True) as live:
-    NUM_EPOCHS = 5
+    NUM_EPOCHS = 1
 
     live.log_param("epochs", NUM_EPOCHS)
 
