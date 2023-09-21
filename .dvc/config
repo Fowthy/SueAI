@@ -1,0 +1,4 @@
+[core]
+    remote = sue_2023
+['remote "sue_2023"']
+    url = s3://sue2023
