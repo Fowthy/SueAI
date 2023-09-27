@@ -1,0 +1,11 @@
+params:
+- params.yaml
+metrics:
+- metrics.json
+plots:
+- plots/metrics:
+    x: step
+artifacts:
+  example-ann:
+    path: ../artifacts/example-ann
+    type: model
