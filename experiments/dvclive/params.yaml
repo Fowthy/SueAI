@@ -2,4 +2,4 @@ num_classes: 10
 metrics:
 - accuracy
 optimizer: adam
-epochs: 5
+epochs: 4
