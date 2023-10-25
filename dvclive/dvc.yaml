@@ -1,0 +1,11 @@
+params:
+- params.yaml
+metrics:
+- metrics.json
+plots:
+- plots/metrics:
+    x: step
+artifacts:
+  test2:
+    path: ../modeltest.pt
+    type: model
