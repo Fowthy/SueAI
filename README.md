@@ -23,3 +23,14 @@ Pull all remote files
 ```
 dvc pull -a
 ```
+
+### Adding files
+Add file to dvc
+```
+dvc add <FILENAME>
+```
+
+Push new files to remote
+```
+dvc push
+```
