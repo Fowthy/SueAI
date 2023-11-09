@@ -5,3 +5,7 @@
 /flow_data.csv
 /merged_cleaned_data.csv
 /merged_cleaned_encoded_data.csv
+/test_data.csv
+/train_data.csv
+/test_flow_data.csv
+/train_flow_data.csv
