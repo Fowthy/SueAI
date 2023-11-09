@@ -1,0 +1,5 @@
+outs:
+- md5: a7260354f5f849796deafb81135b0e8f
+  size: 139503421
+  hash: md5
+  path: elastic_may2022_data.csv
