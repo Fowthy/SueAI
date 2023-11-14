@@ -2,10 +2,10 @@
 /elastic_may2021_malicious_data.csv
 /elastic_may2021_benign_data.csv
 /elastic_may2022_data.csv
-/flow_data.csv
 /merged_cleaned_data.csv
+/flow_data.csv
 /merged_cleaned_encoded_data.csv
-/test_data.csv
 /train_data.csv
+/test_data.csv
 /test_flow_data.csv
 /train_flow_data.csv
