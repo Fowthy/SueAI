@@ -6,6 +6,7 @@ from dvc.api import DVCFileSystem
 
 def fetch_data():
     # Load all data files from DVC remote
+    # try:
     dvc_config = {
         "remote": {
             "streamlit": {
@@ -16,11 +17,10 @@ def fetch_data():
         },
     }
     fs = DVCFileSystem("../", config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
-    try:
-        fs.get("../data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
-        print("Completed fetching data")
-    except:
-        print("Failed to obtain data from remote, continuing execution, some data files might not be available")
+    fs.get("../data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
+    print("Completed fetching data")
+    # except Error
+        # print("Failed to obtain data from remote, continuing execution, some data files might not be available")
 
 
 def main():
