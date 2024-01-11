@@ -25,7 +25,9 @@ def fetch_data():
 
 
 def main():
-    fetch_data()
+    # fetch_data()
+    if (st.button("Load DVC")):
+        fetch_data()
 
     st.title("Number Guessing Game")
 
