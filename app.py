@@ -5,7 +5,7 @@ import numpy as np
 # Function to load data
 def load_data():
     # Load your data here
-    data = pd.read_csv('./data/merged_cleaned_data.csv')
+    data = pd.read_csv('/data/merged_cleaned_data.csv')
     return data
 
 # Function to get model predictions
