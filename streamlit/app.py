@@ -69,10 +69,8 @@ def main():
 
     st.write("Guess a number between 1 and 100.")
 
-    # Get the player's guess
     st.session_state['guess'] = st.number_input("Enter your guess", min_value=1, max_value=100, value=1)
 
-    # Check the player's guess
     if st.session_state['guess'] is not None:
         if st.session_state['guess'] < st.session_state['number_to_guess']:
             st.write("Too low! Try a higher number.")
@@ -80,8 +78,8 @@ def main():
             st.write("Too high! Try a lower number.")
         else:
             st.write("Congratulations! You guessed the number.")
-            st.session_state['number_to_guess'] = random.randint(1, 100)  # Generate a new number for the next game
-            st.session_state['guess'] = None  # Reset the guess
+            st.session_state['number_to_guess'] = random.randint(1, 100)
+            st.session_state['guess'] = None  
 
 if __name__ == "__main__":
     main()
