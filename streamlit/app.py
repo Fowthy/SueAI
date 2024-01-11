@@ -9,15 +9,15 @@ def fetch_data():
     # try:
     dvc_config = {
         "remote": {
-            "streamlit": {
+            st.secrets.dvc.remote_name: {
                 "url": st.secrets.dvc.remote_url,
                 "access_key_id": st.secrets.dvc.access_key_id,
                 "secret_access_key": st.secrets.dvc.secret_access_key
             },
         },
     }
-    fs = DVCFileSystem("../", config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
-    fs.get("../data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
+    fs = DVCFileSystem(st.secrets.dvc.git_url, config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
+    fs.get("data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
     print("Completed fetching data")
     # except Error
         # print("Failed to obtain data from remote, continuing execution, some data files might not be available")
