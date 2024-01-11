@@ -17,6 +17,7 @@ def fetch_data():
         },
     }
     fs = DVCFileSystem(st.secrets.dvc.git_url, config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
+    print("Started fetching DVC data")
     fs.get("data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
     print("Completed fetching data")
     # except Error
