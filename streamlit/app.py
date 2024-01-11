@@ -70,7 +70,7 @@ def main():
     st.write("Guess a number between 1 and 100.")
 
     # Get the player's guess
-    st.session_state['guess'] = st.number_input("Enter your guess", min_value=1, max_value=100, value=0)
+    st.session_state['guess'] = st.number_input("Enter your guess", min_value=1, max_value=100, value=1)
 
     # Check the player's guess
     if st.session_state['guess'] is not None:
