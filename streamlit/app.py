@@ -1,62 +1,31 @@
-# import streamlit as st
-# import pandas as pd
-# import numpy as np
-
-# # Function to load data
-# def load_data():
-#     # Load your data here
-#     data = pd.read_csv('/data/merged_cleaned_data.csv')
-#     return data
-
-# # Function to get model predictions
-# def get_predictions(data):
-#     # Preprocess your data
-#     processed_data = preprocess(data)
-#     # Get predictions
-#     predictions = predict(processed_data)
-#     return predictions
-
-# # Main app
-# def main():
-#     st.title("Malicious Attack Prediction in Kubernetes Cluster")
-
-#     # Load your data
-#     data = load_data()
-
-#     # Show data overview
-#     st.header("Data Overview")
-#     st.write(data)
-
-#     # Show model summary
-#     st.header("Model Summary")
-#     st.write("Model details go here")
-
-#     # Show real-time predictions
-#     st.header("Real-time Predictions")
-#     user_input = st.text_input("Enter your netflow data here")
-#     user_data = pd.DataFrame([user_input.split(',')])
-#     # st.write(get_predictions(user_data))
-
-#     # Show prediction explanation
-#     st.header("Prediction Explanation")
-#     st.write("Explanation goes here")
-
-#     # Show model comparison
-#     st.header("Model Comparison")
-#     st.write("Comparison details go here")
-
-#     # Show anomaly detection
-#     st.header("Anomaly Detection")
-#     st.write("Anomaly details go here")
-
-# if __name__ == "__main__":
-#     main()
-
-    
 import streamlit as st
 import random
+import pandas as pd
+import numpy as np
+from dvc.api import DVCFileSystem
+
+def fetch_data():
+    # Load all data files from DVC remote
+    dvc_config = {
+        "remote": {
+            "streamlit": {
+                "url": st.secrets.dvc.remote_url,
+                "access_key_id": st.secrets.dvc.access_key_id,
+                "secret_access_key": st.secrets.dvc.secret_access_key
+            },
+        },
+    }
+    fs = DVCFileSystem("../", config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
+    try:
+        fs.get("../data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
+        print("Completed fetching data")
+    except:
+        print("Failed to obtain data from remote, continuing execution, some data files might not be available")
+
 
 def main():
+    fetch_data()
+
     st.title("Number Guessing Game")
 
     # Generate a random number between 1 and 100
