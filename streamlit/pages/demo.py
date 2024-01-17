@@ -4,10 +4,10 @@ import numpy as np
 from sklearn.externals import joblib
 
 # Load the model
-model = joblib.load('streamlit/model.pkl')
+model = joblib.load('./streamlit/model.pkl')
 
 # Load your data
-data = pd.read_csv('data/train_data.csv')
+data = pd.read_csv('./data/train_data.csv')
 
 # Make predictions
 predictions = model.predict(data)
