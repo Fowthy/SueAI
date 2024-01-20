@@ -5,3 +5,4 @@ dvc
 dvc-s3 # For the remote AWS S3 storage
 joblib
 scikit-learn
+matplotlib
