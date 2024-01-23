@@ -6,7 +6,7 @@ import time
 
 
 # Load the model
-model = joblib.load('./model.pkl')
+model = joblib.load('model.pkl')
 
 # Load your data
 data = pd.read_csv('data/test_data.csv')
