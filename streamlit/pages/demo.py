@@ -9,7 +9,7 @@ import time
 model = joblib.load('./model.pkl')
 
 # Load your data
-data = pd.read_csv('./data/test_data.csv')
+data = pd.read_csv('/data/test_data.csv')
 
 benign = data[data['label'] == 0]
 malicious = data[data['label'] == 1]
@@ -19,8 +19,6 @@ benign_sample = benign.sample(frac=0.01, random_state=1)
 
 # Concatenate the benign sample and the malicious data
 data = pd.concat([benign_sample, malicious])
-
-st.text("This is not a test")
 
 
 # Ensure the order of columns matches the order of features in the trained model
