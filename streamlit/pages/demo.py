@@ -9,7 +9,7 @@ import time
 model = joblib.load('./model.pkl')
 
 # Load your data
-data = pd.read_csv('/data/test_data.csv')
+data = pd.read_csv('data/test_data.csv')
 
 benign = data[data['label'] == 0]
 malicious = data[data['label'] == 1]
