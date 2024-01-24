@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from st_pages import add_indentation
 add_indentation()
 
-
 st.header("Isolation Forest Model Testing")
 
 # Description of the model
