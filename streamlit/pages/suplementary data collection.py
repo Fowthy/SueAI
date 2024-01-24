@@ -106,6 +106,10 @@ def main():
     st.write("And this are the results between the time range of 15:08 and 15:09, where the attack took place. Still the results are almost random.")
     st.write(counts)
 
+    st.header("Exported Data Sample")
+    st.write("This is a sample of the exported data from the kubernetes cluster using Wireshark and ksniff.")
+    st.dataframe(df.head(50))
+
     
 
 # Run the app
