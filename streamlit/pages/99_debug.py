@@ -3,7 +3,6 @@ from dvc.api import DVCFileSystem
 import os
 import pandas as pd
 
-st.set_page_config(layout="wide")
 data_path = "data"
 
 def fetch_data():
