@@ -16,6 +16,7 @@ def main():
         Page("./streamlit/pages/dvc.py", "DVC", in_section=True),
         Section("Models"),
         Page("./streamlit/pages/isolation_forest.py", "Isolation Forest", in_section=True),
+        Page("./streamlit/pages/decision_trees.py", "Decision Trees", in_section=True),
         Page("./streamlit/pages/ethics.py", "Ethics", in_section=False),
         Page("./streamlit/pages/demo.py", "Demo", in_section=False),
         Page("./streamlit/pages/findings.py", "Findings", in_section=False),
