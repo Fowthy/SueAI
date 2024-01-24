@@ -2,33 +2,8 @@ import streamlit as st
 import random
 import pandas as pd
 import numpy as np
-from dvc.api import DVCFileSystem
-
-def fetch_data():
-    # Load all data files from DVC remote
-    # try:
-    dvc_config = {
-        "remote": {
-            st.secrets.dvc.remote_name: {
-                "url": st.secrets.dvc.remote_url,
-                "access_key_id": st.secrets.dvc.access_key_id,
-                "secret_access_key": st.secrets.dvc.secret_access_key
-            },
-        },
-    }
-    fs = DVCFileSystem(st.secrets.dvc.git_url, config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
-    print("Started fetching DVC data")
-    fs.get("data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
-    print("Completed fetching data")
-    # except Error
-        # print("Failed to obtain data from remote, continuing execution, some data files might not be available")
-
 
 def main():
-    # fetch_data()
-    if (st.button("Load DVC")):
-        fetch_data()
-
     st.title("Number Guessing Game")
 
     # Generate a random number between 1 and 100
