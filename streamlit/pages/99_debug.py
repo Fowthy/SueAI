@@ -4,6 +4,7 @@ import os
 import pandas as pd
 
 st.set_page_config(layout="wide")
+data_path = "data"
 
 def fetch_data():
     # Load all data files from DVC remote
@@ -19,16 +20,14 @@ def fetch_data():
     }
     fs = DVCFileSystem(st.secrets.dvc.git_url, config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
     print("Started fetching DVC data")
-    fs.get("data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
+    fs.get("data/", data_path, recursive=True) # Pull all dvc files from the data folder and populate them in-place
     print("Completed fetching data")
     # except Error
         # print("Failed to obtain data from remote, continuing execution, some data files might not be available")
     
 # manually pull the DVC
-if (st.button("Pull DVC")):
-    fetch_data()
+st.button("Pull DVC", on_click=fetch_data)
 
-data_path = "data"
 # Get a list of all files in the data directory ending with ".csv"
 csv_files = [file for file in os.listdir(data_path) if file.endswith(".csv")]
 # Create a dictionary with file names and their full paths
@@ -38,7 +37,7 @@ selected_file = st.selectbox("Select data file", list(file_dict.keys()))
 
 # Display the selected file name and its pandas dataframe
 if selected_file:
-    st.write(selected_file)
-    st.write(file_dict[selected_file])
+    file_path = file_dict[selected_file]
+    st.write(f"{selected_file}  [{file_path}]")
     df = pd.read_csv(file_dict[selected_file])
     st.write(df)
