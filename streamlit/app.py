@@ -13,6 +13,7 @@ def main():
         Page("./streamlit/pages/sue.py", "SUE", in_section=False),
         Page("./streamlit/pages/problem.py", "Problem", in_section=False),
         Section("Data"),
+        Page("./streamlit/pages/preprocessing.py", "Pre-processing", in_section=True),
         Page("./streamlit/pages/dvc.py", "DVC", in_section=True),
         Page("./streamlit/pages/suplementary_data_collection.py", "Suplementary Data Collection", in_section=True),
         Section("Models"),
