@@ -41,6 +41,4 @@ if selected_file:
     file_path = file_dict[selected_file]
     st.write(f"{selected_file}  [{file_path}]")
     df = pd.read_csv(file_dict[selected_file])
-    st.write(df)
-
-st.write(os.getcwd())
+    st.dataframe(df)
