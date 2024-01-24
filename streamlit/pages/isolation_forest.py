@@ -5,8 +5,6 @@ from st_pages import add_indentation
 add_indentation()
 
 
-st.header("Isolation Forest Model Testing")
-
 # Description of the model
 st.write("""
         Isolation Forest is a type of machine learning algorithm used for detecting unusual data points, known as anomalies. 
