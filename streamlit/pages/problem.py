@@ -1,4 +1,7 @@
 import streamlit as st
+from st_pages import add_indentation
+add_indentation()
+
 
 st.title("Which :blue[AI methods] can be used to :blue[detect irregularities] in cloud-based :blue[Kubernetes clusters]?")
 

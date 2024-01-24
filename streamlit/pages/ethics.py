@@ -1,6 +1,9 @@
 import base64
 import streamlit as st
 from st_clickable_images import clickable_images
+from st_pages import add_indentation
+add_indentation()
+
 
 tict_categories = ["human", "transparency", "impact", "stakeholders", "sustainability", "criminal", "data", "future", "privacy", "inclusivity"]
 images = []

@@ -2,8 +2,26 @@ import streamlit as st
 import random
 import pandas as pd
 import numpy as np
+from st_pages import Page, Section, add_indentation, show_pages, hide_pages
 
 def main():
+    # Page routing configuration
+    add_indentation()
+    show_pages(
+    [
+        Page("./streamlit/app.py", "Time Waster", in_section=False),
+        Page("./streamlit/pages/sue.py", "SUE", in_section=False),
+        Page("./streamlit/pages/problem.py", "Problem", in_section=False),
+        Page("./streamlit/pages/data.py", "Data", in_section=False),
+        Section("Models"),
+        Page("./streamlit/pages/isolation_forest.py", "Isolation Forest", in_section=True),
+        Page("./streamlit/pages/ethics.py", "Ethics", in_section=False),
+        Page("./streamlit/pages/demo.py", "Demo", in_section=False),
+        Page("./streamlit/pages/findings.py", "Findings", in_section=False),
+        Page("./streamlit/pages/next_steps.py", "Next Steps", in_section=False),
+        Page("./streamlit/pages/debug.py", "Debug", in_section=False),
+    ])
+
     st.title("Number Guessing Game")
 
     # Generate a random number between 1 and 100

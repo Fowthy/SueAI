@@ -3,6 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import time
 import numpy as np
+from st_pages import add_indentation
+add_indentation()
+
 
 # Load your data
 data = pd.read_csv('data/test_data.csv')

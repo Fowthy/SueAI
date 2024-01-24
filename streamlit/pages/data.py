@@ -1,5 +1,7 @@
 import streamlit as st
 import os
+from st_pages import add_indentation
+add_indentation()
 
 st.header("DVC")
 st.markdown("As a part of the project's AI Dev/Ops tools, [DVC](https://dvc.org/) has been used to manage data and AI models")

@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from st_pages import add_indentation
+add_indentation()
 
-st.title("Models Testing")
 
 st.header("Isolation Forest Model Testing")
 

@@ -2,6 +2,8 @@ import streamlit as st
 from dvc.api import DVCFileSystem
 import os
 import pandas as pd
+from st_pages import add_indentation
+add_indentation()
 
 data_path = "data"
 
