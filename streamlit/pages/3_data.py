@@ -16,7 +16,7 @@ st.markdown("The project's DVC toolchain is furter expanded with Iterative Studi
 with st.container(border=True):
     # Github
     left_col, right_col = st.columns([0.2, 0.8])
-    left_col.image("media/github.png", width=120)
+    left_col.image("./media/github.png", width=120)
     right_col.write('')
     right_col.write('')
     right_col.write('')
@@ -27,16 +27,16 @@ with st.container(border=True):
     # Github children, DVC, Iterative Studio
     with child_col:
         left_col, right_col = st.columns([0.2, 0.8])
-        left_col.image("media/dvc.png", width=100)
+        left_col.image("./media/dvc.png", width=100)
         right_col.write('')
         right_col.write('')
         right_col.markdown("Large files, such as datasets are stored and management via DVC, allowing them to be downloaded on demand when required.")
         left_col, right_col = st.columns([0.2, 0.8])
-        left_col.image("media/iterativestudio.png", width=100)
+        left_col.image("./media/iterativestudio.png", width=100)
         right_col.markdown("Models and their results are stored within Iterative Studio where they can be downloaded or directly evaluated/compared.")
     # Sharepoint
     left_col, right_col = st.columns([0.2, 0.8])
-    left_col.image("media/sharepoint.png", width=120)
+    left_col.image("./media/sharepoint.png", width=120)
     right_col.write('')
     right_col.write('')
     right_col.write('')

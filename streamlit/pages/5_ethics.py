@@ -5,7 +5,7 @@ from st_clickable_images import clickable_images
 tict_categories = ["human", "transparency", "impact", "stakeholders", "sustainability", "criminal", "data", "future", "privacy", "inclusivity"]
 images = []
 for category in tict_categories:
-    with open(f"media/tict/{category}.png", "rb") as image:
+    with open(f"./media/tict/{category}.png", "rb") as image:
         encoded = base64.b64encode(image.read()).decode()
         images.append(f"data:image/png;base64,{encoded}")
 

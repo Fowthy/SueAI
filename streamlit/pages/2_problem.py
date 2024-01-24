@@ -6,7 +6,7 @@ st.title("Which :blue[AI methods] can be used to :blue[detect irregularities] in
 st.header("Context")
 st.markdown("Kubernetes is an open-source container management system to support the process of running large microservice-based applications.")
 st.markdown("Kubernetes is used by many large companies to help orchestrate the communication and resource management between services within a product (containers)")
-services = ["media/google.png", "media/gmail.png", "media/maps.png", "media/drive.png"]
+services = ["./media/google.png", "./media/gmail.png", "./media/maps.png", "./media/drive.png"]
 with st.container(border = True):
     user_col, kubernetes_col, services_col = st.columns([0.3, 0.3, 0.2], gap="small")
     with user_col:
