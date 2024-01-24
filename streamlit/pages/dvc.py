@@ -3,11 +3,16 @@ import os
 from st_pages import add_indentation
 add_indentation()
 
-st.header("DVC")
 st.markdown("As a part of the project's AI Dev/Ops tools, [DVC](https://dvc.org/) has been used to manage data and AI models")
 st.markdown("Datasets used within the AI domain can become very large, so large infact that typical file management tools such as the used [GitHub Repository blocks them from being uploaded](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#file-size-limits).")
 st.markdown("The implemented DVC pipeline integrates on top of the existing GitHub repository, allowing any collaborators on the project to easily obtain any dataset they need from the project's [S3 bucket](https://aws.amazon.com/s3/). \n\
             This allows anyone from anywhere to directly obtain the datasets they require, including any cloud services such as this streamlit app!, or a automated pipeline such as GitHub actions")
+
+st.markdown("To use DVC locally to pull the project's datasets, first set the authentication keys for the AWS S3 bucket:")
+st.code("dvc remote modify --local sue_2023 access_key_id TOKENHERE", language="bash")
+st.code("dvc remote modify --local sue_2023 secret_access_key TOKENHERE", language="bash")
+st.markdown("Then simply pull the file (or pull everything = -a):")
+st.code("dvc pull -a", language="bash")
 
 csv_files = [file for file in os.listdir("data") if file.endswith(".csv")]
 st.selectbox("Available DVC files", list(csv_files))
