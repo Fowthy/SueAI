@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 from sklearn.metrics import accuracy_score
-
 from joblib import load
+from st_pages import add_indentation
+add_indentation()
 
 model = load('isolationforest.joblib')
 
