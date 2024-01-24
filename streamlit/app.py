@@ -23,7 +23,7 @@ def main():
         Page("./streamlit/pages/ethics.py", "Ethics", in_section=False),
         Page("./streamlit/pages/demo.py", "Demo", in_section=False),
         Page("./streamlit/pages/findings.py", "Findings", in_section=False),
-        Page("./streamlit/pages/next_steps.py", "Next Steps", in_section=False),
+        Page("./streamlit/pages/future_work.py", "Future Work", in_section=False),
         Page("./streamlit/pages/debug.py", "Debug", in_section=False),
     ])
 
