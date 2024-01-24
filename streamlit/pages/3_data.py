@@ -27,7 +27,7 @@ with st.container(border=True):
     # Github children, DVC, Iterative Studio
     with child_col:
         left_col, right_col = st.columns([0.2, 0.8])
-        left_col.image("./streamlit/streamlit/media/dvc.png", width=100)
+        left_col.image("./streamlit/media/dvc.png", width=100)
         right_col.write('')
         right_col.write('')
         right_col.markdown("Large files, such as datasets are stored and management via DVC, allowing them to be downloaded on demand when required.")
