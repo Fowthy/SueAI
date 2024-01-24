@@ -6,23 +6,23 @@ st.title("Which :blue[AI methods] can be used to :blue[detect irregularities] in
 st.header("Context")
 st.markdown("Kubernetes is an open-source container management system to support the process of running large microservice-based applications.")
 st.markdown("Kubernetes is used by many large companies to help orchestrate the communication and resource management between services within a product (containers)")
-services = ["./media/google.png", "./media/gmail.png", "./media/maps.png", "./media/drive.png"]
+services = ["./streamlit/media/google.png", "./streamlit/media/gmail.png", "./streamlit/media/maps.png", "./streamlit/media/drive.png"]
 with st.container(border = True):
     user_col, kubernetes_col, services_col = st.columns([0.3, 0.3, 0.2], gap="small")
     with user_col:
         st.write('')
         left_col, right_col = st.columns(2, gap="small")
-        left_col.image("media/user.png", width=150)
+        left_col.image("./streamlit/media/user.png", width=150)
         right_col.write('')
         right_col.write('')
-        right_col.image("media/arrow_right.png", width=75)
+        right_col.image("./streamlit/media/arrow_right.png", width=75)
     with kubernetes_col:
         st.write('')
         left_col, right_col = st.columns(2, gap="small")
-        left_col.image("media/kubernetes.png", width=150)
+        left_col.image("./streamlit/media/kubernetes.png", width=150)
         right_col.write('')
         right_col.write('')
-        right_col.image("media/arrow_right.png", width=75)
+        right_col.image("./streamlit/media/arrow_right.png", width=75)
     with services_col:
         st.image(services, width=75)
 st.markdown("There are many bad actors out there, trying to maliciously attack the services hosted within these Kubernetes clusters.")
