@@ -7,3 +7,4 @@ joblib
 scikit-learn
 matplotlib
 st-clickable-images # Streamlit extension to allow for clickable images
+st_pages # pager sidebar modifier
