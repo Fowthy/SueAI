@@ -3,6 +3,7 @@ from dvc.api import DVCFileSystem
 import os
 import pandas as pd
 
+st.set_page_config(layout="wide")
 
 def fetch_data():
     # Load all data files from DVC remote
