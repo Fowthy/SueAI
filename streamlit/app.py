@@ -22,7 +22,9 @@ def main():
         Page("./streamlit/pages/transformers.py", "TranAD", in_section=True),
         Page("./streamlit/pages/ethics.py", "Ethics", in_section=False),
         Page("./streamlit/pages/demo.py", "Demo", in_section=False),
-        Page("./streamlit/pages/findings.py", "Findings", in_section=False),
+        Section("Findings"),
+        Page("./streamlit/pages/model_results.py", "Model Results", in_section=True),
+        Page("./streamlit/pages/labelled_learning_findings.py", "Supervised Vs Unsupervised", in_section=True),
         Page("./streamlit/pages/future_work.py", "Future Work", in_section=False),
         Page("./streamlit/pages/debug.py", "Debug", in_section=False),
     ])
