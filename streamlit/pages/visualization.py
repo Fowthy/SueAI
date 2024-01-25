@@ -27,3 +27,9 @@ st.markdown("""##### Example 1""")
 st.image("./streamlit/media/confusion1.png")
 st.markdown("""##### Example 2""")
 st.image("./streamlit/media/confusion2.png")
+df = pd.DataFrame({
+    'precision': ["0.915", "0.915", "0.915", "0.85"],
+    'f1': ["0.86", "0.86", "0.86", "0.797"],
+    'precision': ["0.754", "0.754", "0.754", "0.754"],
+    'recall': ["1.0", "1.0", "1.0", "0.844"],
+}, index=["10% perturbation, 50% perturbation", "80% perturbation", "without perturbation"])

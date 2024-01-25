@@ -20,6 +20,7 @@ def main():
         Section("Models"),
         Page("./streamlit/pages/isolation_forest.py", "Isolation Forest", in_section=True),
         Page("./streamlit/pages/ann.py", "Neural Networks", in_section=True),
+        Page("./streamlit/pages/state_machines.py", "State machines", in_section=True),
         Page("./streamlit/pages/decision_trees.py", "Decision Trees", in_section=True),
         Page("./streamlit/pages/svm.py", "One-class SVM", in_section=True),
         Page("./streamlit/pages/transformers.py", "TranAD", in_section=True),
