@@ -2,32 +2,33 @@ import streamlit as st
 import random
 import pandas as pd
 import numpy as np
-from dvc.api import DVCFileSystem
-
-def fetch_data():
-    # Load all data files from DVC remote
-    # try:
-    dvc_config = {
-        "remote": {
-            st.secrets.dvc.remote_name: {
-                "url": st.secrets.dvc.remote_url,
-                "access_key_id": st.secrets.dvc.access_key_id,
-                "secret_access_key": st.secrets.dvc.secret_access_key
-            },
-        },
-    }
-    fs = DVCFileSystem(st.secrets.dvc.git_url, config=dvc_config) # Go up in the directory to enter the root of the repository where the dvc file system should start
-    print("Started fetching DVC data")
-    fs.get("data/", "data", recursive=True) # Pull all dvc files from the data folder and populate them in-place
-    print("Completed fetching data")
-    # except Error
-        # print("Failed to obtain data from remote, continuing execution, some data files might not be available")
-
+from st_pages import Page, Section, add_indentation, show_pages, hide_pages
 
 def main():
-    # fetch_data()
-    if (st.button("Load DVC")):
-        fetch_data()
+    # Page routing configuration
+    add_indentation()
+    show_pages(
+    [
+        Page("./streamlit/app.py", "Time Waster", in_section=False),
+        Page("./streamlit/pages/sue.py", "SUE", in_section=False),
+        Page("./streamlit/pages/problem.py", "Problem", in_section=False),
+        Section("Data"),
+        Page("./streamlit/pages/preprocessing.py", "Pre-processing", in_section=True),
+        Page("./streamlit/pages/dvc.py", "DVC", in_section=True),
+        Page("./streamlit/pages/suplementary_data_collection.py", "Suplementary Data Collection", in_section=True),
+        Section("Models"),
+        Page("./streamlit/pages/isolation_forest.py", "Isolation Forest", in_section=True),
+        Page("./streamlit/pages/decision_trees.py", "Decision Trees", in_section=True),
+        Page("./streamlit/pages/svm.py", "One-class SVM", in_section=True),
+        Page("./streamlit/pages/transformers.py", "TranAD", in_section=True),
+        Page("./streamlit/pages/ethics.py", "Ethics", in_section=False),
+        Page("./streamlit/pages/demo.py", "Demo", in_section=False),
+        Section("Findings"),
+        Page("./streamlit/pages/model_results.py", "Model Results", in_section=True),
+        Page("./streamlit/pages/labelled_learning_findings.py", "Supervised Vs Unsupervised", in_section=True),
+        Page("./streamlit/pages/future_work.py", "Future Work", in_section=False),
+        Page("./streamlit/pages/debug.py", "Debug", in_section=False),
+    ])
 
     st.title("Number Guessing Game")
 

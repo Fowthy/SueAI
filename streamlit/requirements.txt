@@ -6,3 +6,5 @@ dvc-s3 # For the remote AWS S3 storage
 joblib
 scikit-learn
 matplotlib
+st-clickable-images # Streamlit extension to allow for clickable images
+st_pages # pager sidebar modifier
