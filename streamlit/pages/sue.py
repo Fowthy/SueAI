@@ -16,4 +16,4 @@ st.markdown("###### - AWS Star partner of the year 2023")
 st.markdown("###### - #1 largest cloud-native business community in Europe")
 with st.container(border=True):
     st.image("./streamlit/media/sponsors.png")
-    st.markdown(st.markdown("<h5 style='text-align: center;'>List of SUE's partners</h5>", unsafe_allow_html=True))
+    st.markdown("<h5 style='text-align: center;'>List of SUE's partners</h5>", unsafe_allow_html=True)
