@@ -14,5 +14,6 @@ st.markdown("###### - 26 years of experience")
 st.markdown("###### - 50 succesful cloud migrations")
 st.markdown("###### - AWS Star partner of the year 2023")
 st.markdown("###### - #1 largest cloud-native business community in Europe")
-st.image("./streamlit/media/sue.png")
-st.markdown("###### Sue logo")
+with st.container(border=True):
+    st.image("./streamlit/media/sponsors.png")
+    st.markdown("###### Compnies that work with SUE")
